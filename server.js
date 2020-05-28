@@ -17,7 +17,9 @@ app.engine('jsx', require('express-react-views').createEngine());
 app.use(methodOverride('_method'));
 
 // mongoose connection
-mongoose.connect('mongodb://localhost:27017/basiccrud', { useNewUrlParser: true, useUnifiedTopology: true });
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/unit-2-assessment';
+
+mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useFindAndModify: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {
     console.log("connected to mongo");
 })
