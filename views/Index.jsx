@@ -5,14 +5,14 @@ class Index extends React.Component {
     render() {
         
         const {todoList} = this.props
-        var listArray = []
+        
         // cant put todoList inside of []
         // is the ternary operator incorrect or am i just forgetting to declare something?
 
         return (
             <body> 
                 <h1>to do list</h1>
-                <h3>{listArray === undefined ? "There are no to-dos!" : listArray}</h3>
+                <h3>{!todoList.length ? "There are no to-dos!" : " "}</h3>
                 <h3></h3>
                     <ul>
                        { todoList.map((item, i) => {
