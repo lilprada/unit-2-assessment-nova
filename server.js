@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
             todoList: allToDos
         })
     })
-    res.render('Index')
 })
 
 //create route
@@ -29,7 +28,7 @@ app.post('/', (req, res) => {
     }
 
     Item.create(req.body, (error, createdItem) => {
-        res.redirect('/')
+        res.redirect('Index')
     })
 })
 
