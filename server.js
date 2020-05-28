@@ -6,6 +6,9 @@ const Item = require('./models/todos.js')
 const methodOverride  = require('method-override');
 const mongoose = require('mongoose')
 
+//port
+const PORT = process.env.PORT || 3000;
+
 // middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
@@ -56,6 +59,5 @@ app.delete('/:id', (req, res) => {
 
 
 //listener route
-app.listen(port, (req, res) => {
-    console.log('hello')
-})
+app.listen(PORT, () => 
+console.log( 'Listening on port:', PORT));
